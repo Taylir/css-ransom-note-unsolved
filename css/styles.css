@@ -1,11 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Piazzolla&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Piazzolla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap");
+/*!!!
+ * PLEASE NOTE ALL 3 ADDITIONAL FONTS ARE IN THE INCLUDED LINK BELOW
+ *!!!
+ * */
+@import url("https://fonts.googleapis.com/css2?family=Agu+Display&family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Bytesized&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --clr-white: hsl(220, 37%, 100%);
+  --clr-surface: hsl(220, 37%, 97%);
+  --clr-text: hsl(244, 44%, 14%);
+
+  --clr-yellow-400: hsl(42, 99%, 69%);
+  --clr-yellow-300: rgba(255, 244, 204, 0.9);
+  --clr-purple-400: hsl(280, 96%, 45%);
+  --clr-purple-300: rgba(239, 207, 252, 0.8);
+  --clr-cyan-400: hsl(198, 99%, 90%);
+  --clr-cyan-300: rgba(150, 150, 255, 0.85);
 }
 
 body,
@@ -38,6 +56,8 @@ body {
 }
 
 .word > span {
+  --_border: var(--border, gray);
+
   position: relative;
   padding: 20px 30px;
   width: max-content;
@@ -46,9 +66,49 @@ body {
   justify-content: center;
   max-width: 90px;
   max-height: 90px;
-  border: 6px solid grey;
+  border: 6px solid var(--_border);
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.8s ease-in-out;
+}
+
+.word > span:nth-of-type(odd) {
+  transform: rotate(100turn);
+}
+
+.bigByte {
+  font-family: "Bytesized", sans-serif;
+  font-weight: 700;
+}
+
+.smallByte {
+  font-family: "Bytesized", sans-serif;
+  font-weight: 400;
+}
+
+.bigShoulders {
+  font-family: "Big Shoulders Inline", sans-serif;
+  font-weight: 700;
+}
+
+.smallShoulders {
+  font-family: "Big Shoulders Inline", sans-serif;
+  font-weight: 400;
+}
+
+.bigAgu {
+  font-family: "Agu Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "MORF" 0;
+}
+
+.smallAgu {
+  font-family: "Agu Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "MORF" 0;
 }
 
 /* Sample CSS for the WHY word */
@@ -59,7 +119,8 @@ body {
   color: aqua;
   text-decoration: underline;
   text-transform: uppercase;
-  font-family: 'Piazolla', sans-serif;
+  font-family: "Piazolla", sans-serif;
+  --border: var(--clr-purple-400);
 }
 
 .whyHLetter {
@@ -68,7 +129,8 @@ body {
   color: darkgoldenrod;
   text-decoration: overline;
   text-transform: lowercase;
-  font-family: 'Ceviche One', sans-serif;
+  font-family: "Ceviche One", sans-serif;
+  --border: var(--clr-yellow-400);
 }
 
 .whyYLetter {
@@ -77,94 +139,266 @@ body {
   color: coral;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: 'Raleway Dots', sans-serif;
+  font-family: "Raleway Dots", sans-serif;
 }
 
 /* DID word */
 
 .didDLetter {
+  color: red;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 150px;
+  text-transform: uppercase;
+  --border: var(--clr-cyan-300);
 }
 
 .didILetter {
+  color: rgb(100, 255, 100);
+  font-size: 90px;
+  text-decoration: overline;
+  --border: rgba(200, 234, 99, 0.6);
 }
 
 .didDTwoLetter {
+  color: #38af12;
+  font-size: 60px;
+  --border: hsl(20, 50%, 70%);
+  font-family: "Ceviche One", sans-serif;
 }
 
 /* THE word */
 
 .theTLetter {
+  color: yellow;
+  text-decoration: line-through;
+  font-weight: bold;
+  font-size: 3rem;
+  --border: hwb(240deg 0% 20% / 50%);
+  font-family: "Raleway Dots", sans-serif;
 }
 
 .theHLetter {
+  color: rgba(40, 28, 299, 0.5);
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 5rem;
+  --border: cyan;
 }
 
 .theELetter {
+  color: pink;
+  text-decoration: blink;
+  font-weight: none;
+  font-size: 40px;
+  --border: pink;
 }
 
 /* FRONT-END word */
 
 .frontendFLetter {
+  color: red;
+  text-decoration: overline;
+  font-weight: 400;
+  font-size: 50px;
+  --border: rgb(30, 50, 350);
 }
 
 .frontendRLetter {
+  color: rgba(69, 69, 69, 0.96);
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 80px;
+  --border: var(--clr-yellow-300);
 }
 
 .frontendOLetter {
+  color: teal;
+  text-decoration: line-through;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 100px;
+  --border: coral;
 }
 
 .frontendNLetter {
+  color: silver;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 100px;
+  --border: gold;
 }
 
 .frontendTLetter {
+  color: salmon;
+  text-decoration: overline;
+  font-weight: none;
+  font-size: 66px;
+  --border: aqua;
 }
 
 .frontendELetter {
+  font-size: 72px;
+  font-weight: bold;
+  color: aqua;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: "Piazolla", sans-serif;
+  --border: var(--clr-purple-400);
 }
 
 .frontendNTwoLetter {
+  color: rgba(1, 254, 10, 0.8);
+  font-size: 90px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-transform: lowercase;
+  --border: brown;
 }
 
 .frontendDLetter {
+  color: var(--clr-purple-400);
+  font-weight: none;
+  font-size: 44px;
+  text-transform: uppercase;
+  --border: tomato;
 }
 
 /* DEVELOPER word */
 
 .developerDLetter {
+  background: linear-gradient(to top right, purple 0% 20%, gold 90%, white);
+  font-family: "Raleway Dots", sans-serif;
+  color: black;
+  text-decoration: underline;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 3rem;
+  --border: hwb(240deg 0% 20% / 50%);
 }
 .developerELetter {
+  color: var(--clr-purple-400);
+  font-weight: none;
+  font-size: 44px;
+  text-transform: uppercase;
+  --border: tomato;
 }
 .developerVLetter {
+  background: linear-gradient(to top right, red, blue);
+  text-decoration: line-through;
+  font-weight: bold;
+  font-size: 3rem;
+  --border: hwb(240deg 0% 20% / 50%);
+  font-family: "Raleway Dots", sans-serif;
 }
 .developerETwoLetter {
+  font-size: 72px;
+  font-weight: bold;
+  color: teal;
+  text-decoration: overline;
+  text-transform: uppercase;
+  --border: var(--clr-purple-400);
 }
 .developerLLetter {
+  background: linear-gradient(to top right, purple 0% 20%, gold 90%, white);
+  color: black;
+  text-decoration: underline;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 3rem;
+  --border: hwb(240deg 0% 20% / 50%);
 }
 .developerOLetter {
+  background: linear-gradient(to bottom, coral, aqua);
+  color: yellow;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 3rem;
+  --border: hwb(240deg 0% 20% / 50%);
 }
 .developerPLetter {
+  background: linear-gradient(to left, white, black);
+  color: black;
+  text-decoration: underline;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 3rem;
+  --border: var(--clr-surface);
 }
 .developerEThreeLetter {
+  background: linear-gradient(
+    to bottom right,
+    rgb(200, 100, 50),
+    rgb(50, 100, 200)
+  );
+  color: black;
+  text-decoration: underline;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 3rem;
+  --border: hwb(240deg 0% 20% / 50%);
 }
 .developerRLetter {
+  font-size: 72px;
+  font-weight: bold;
+  color: yellow;
+  text-decoration: line-through;
+  text-transform: uppercase;
+  --border: var(--clr-white);
 }
 
 /* TAKE word */
 
 .takeTLetter {
+  text-decoration: none;
+  text-transform: none;
+  font-weight: none;
+  font-size: 200px;
+  --border: rgb(79, 19, 200);
 }
 .takeALetter {
+  color: var(--clr-purple-400);
+  font-weight: none;
+  font-size: 44px;
+  text-transform: uppercase;
+  --border: tomato;
 }
 .takeKLetter {
+  font-size: 72px;
+  font-weight: bold;
+  color: aqua;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-family: "Piazolla", sans-serif;
+  --border: var(--clr-purple-400);
 }
 .takeELetter {
+  color: magenta;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 100px;
+  --border: fuchsia;
 }
 
 /* UP word */
 
 .upULetter {
+  color: maroon;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 69px;
+  font-weight: bold;
+  --border: lavender;
 }
 .upPLetter {
+  color: navy;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 76px;
+  --border: teal;
 }
 
 /* GARDENING word */
